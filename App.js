@@ -3,14 +3,14 @@ import './App.css'; // Importa os estilos do CSS
 
 function App() {
   // Define os estados do componente
-  const [items, setItems] = useState([]); // Estado para armazenar os itens no carrinho
-  const [newItem, setNewItem] = useState(''); // Estado para armazenar o novo item a ser adicionado
-  const [newQuantity, setNewQuantity] = useState(1); // Estado para armazenar a quantidade do novo item
-  const [isEditing, setIsEditing] = useState(false); // Estado para controlar se está editando um item
+  const [items, setItems] = useState([]); // Armazena os itens no carrinho
+  const [newItem, setNewItem] = useState(''); // Armazena o novo item a ser adicionado
+  const [newQuantity, setNewQuantity] = useState(1); // Armazena a quantidade do novo item
+  const [isEditing, setIsEditing] = useState(false); // Controle se está editando um item
   const [currentItemIndex, setCurrentItemIndex] = useState(null); // Índice do item sendo editado
-  const [searchTerm, setSearchTerm] = useState(''); // Estado para armazenar o termo de busca
-  const [receipt, setReceipt] = useState(null); // Estado para armazenar o comprovante
-  const [error, setError] = useState(null); // Estado para mensagens de erro gerais
+  const [searchTerm, setSearchTerm] = useState(''); // Armazena o termo de busca
+  const [receipt, setReceipt] = useState(null); // Armazena o comprovante
+  const [error, setError] = useState(null); // Mensagem de erro
   const [itemError, setItemError] = useState(null); // Estado para erro ao adicionar item
 
   // Função para adicionar um novo item ao carrinho
@@ -23,7 +23,7 @@ function App() {
     
     setItemError(null); // Limpa o erro se tudo estiver certo
 
-    const existingItem = items.find((item) => item.name === newItem); // Verifica se o item já existe
+    const existingItem = items.find((item) => item.name === newItem); // Verificação do item
     // Se o item já existe e não está em modo de edição, atualiza a quantidade
     if (existingItem && !isEditing) {
       setItems(
@@ -34,7 +34,7 @@ function App() {
         )
       );
     } else if (isEditing && currentItemIndex !== null) {
-      // Se está editando, atualiza o item na posição correta
+      // Item sendo editado, atualiza o item na posição correta
       const updatedItems = [...items];
       updatedItems[currentItemIndex] = { name: newItem, quantity: newQuantity };
       setItems(updatedItems); // Atualiza os itens no estado
@@ -71,7 +71,7 @@ function App() {
     setNewQuantity(items[originalIndex].quantity); // Preenche o campo de quantidade com a quantidade do item a ser editado
   };
 
-  // Função para finalizar a compra e exibir o comprovante ou erro
+  // Função para finalizar a compra e exibir o comprovante 
   const handleFinalizePurchase = () => {
     if (items.length === 0) {
       setError('Nenhum item encontrado no carrinho'); // Define mensagem de erro se não houver itens
@@ -79,7 +79,7 @@ function App() {
     } else {
       const totalItems = items.reduce((acc, item) => acc + item.quantity, 0); // Calcula o total de itens
       const receiptDetails = items.map(
-        (item) => `${item.name} - Qtd:  ${item.quantity}` // Cria detalhes do comprovante
+        (item) => `${item.name} - Qtd:  ${item.quantity}` // Detalhes do comprovante
       );
       setReceipt({
         items: receiptDetails, // Define os itens do comprovante
