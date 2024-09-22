@@ -23,4 +23,5 @@ React App instalado, você pode instalar globalmente usando npm:</li>
   <p> cd carrinho-compras </p>
   <li> Execute o aplicativo React:</li>
   <p> npm start </p>
+  <li> Monte o ambiente do NodeJS e VSCode paara executar o projeto </li>
 </ol>
