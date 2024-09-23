@@ -5,7 +5,7 @@ Foi passado pelo professor códigos base e  a partir deles foram feitas as alter
 
 >Requisitos:
 <p>Considere o projeto abaixo em REACTJS: </p>
-<p></p>Exemplo simples de um projeto em React para um carrinho de compras, permitindo adicionar,
+<p>Exemplo simples de um projeto em React para um carrinho de compras, permitindo adicionar,
 remover, consultar e modificar itens.</p>
 
 >Passo a passo:
@@ -25,3 +25,8 @@ React App instalado, você pode instalar globalmente usando npm:</li>
   <p> npm start </p>
   <li> Monte o ambiente do NodeJS e VSCode paara executar o projeto </li>
 </ol>
+
+>Finalização do trabalho
+<p>Fiz um exemplo simples de um projeto em React para um carrinho de compras, onde consigo adicionar itens,
+remover, consultar, modificar itens e também mostro o comprovante após a finalizção da compra onde ele descrimina o nome de cada item e sua quantidade. </p>
+<p>Também me preocupei ao adicionar um item com o valor mínimo (1) e sempre que o mesmo item é adicionado a quantiade dele é alterada automaticamente.</p>
